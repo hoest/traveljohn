@@ -6,6 +6,13 @@ function traveljohn_register_theme_menu() {
 
 add_action('init', 'traveljohn_register_theme_menu');
 
+function traveljohn_post_remove() {
+  remove_menu_page('edit.php');
+  remove_menu_page('edit-comments.php');
+}
+
+add_action('admin_menu', 'traveljohn_post_remove');
+
 function traveljohn_widgets_init() {
 }
 
@@ -47,7 +54,7 @@ add_filter('rwmb_meta_boxes', function($meta_boxes) {
   $meta_boxes[] = array(
     'id' => 'traveljohn_product_information',
     'title' => 'Product informatie',
-    'pages' => array('traveljohn_product'),
+    'post_types' => array('traveljohn_product'),
     'context'  => 'normal',
     'priority' => 'high',
     'fields' => array(
@@ -85,6 +92,56 @@ add_filter('rwmb_meta_boxes', function($meta_boxes) {
   foreach ($traveljohn_products as $traveljohn_product) {
     $options[$traveljohn_product->ID] = $traveljohn_product->post_title;
   }
+
+  // Extra meta boxes for page post type
+  $meta_boxes[] = array(
+    'id' => 'traveljohn_page',
+    'title' => 'Pagina eigenschappen',
+    'post_types' => array('page'),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      array(
+        'name' => 'Banner afbeelding',
+        'id' => 'banner_image',
+        'desc' => 'Dit is voor de banner op normale pagina\s',
+        'type' => 'image_advanced',
+        'max_file_uploads' => 1,
+        'max_status' => false,
+      ),
+    )
+  );
+
+  // Extra meta boxes for page post type
+  $meta_boxes[] = array(
+    'id' => 'traveljohn_homepage',
+    'title' => 'Homepage eigenschappen',
+    'post_types' => array('page'),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+      array(
+        'name' => 'Homepage banner',
+        'desc' => 'Dit is de grote slider voor op de homepage',
+        'id' => 'homepage_banner',
+        'type' => 'image_advanced',
+        'max_file_uploads' => 10
+      ),
+      array(
+        'name' => 'Homepage payoff',
+        'id' => 'homepage_payoff',
+        'desc' => 'Dit is de tekst die toont onder de grote slider voor op de homepage',
+        'type' => 'wysiwyg',
+      ),
+      array(
+        'name' => 'Homepage slider',
+        'id' => 'homepage_slider',
+        'desc' => 'Dit is de kleine slider voor op de homepage',
+        'type' => 'image_advanced',
+        'max_file_uploads' => 10
+      ),
+    )
+  );
 
   return $meta_boxes;
 });

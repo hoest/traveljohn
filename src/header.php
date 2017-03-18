@@ -66,11 +66,6 @@
               <span style="display: none"><?php bloginfo('name'); ?></span>
             </a>
           </div>
-          <ul>
-            <li><a href>Home</a></li>
-            <li><a href>Onze producten</a></li>
-            <li><a href>Video's</a></li>
-            <li><a href>Contact</a></li>
-          </ul>
+          <?php get_sidebar(); ?>
         </div>
       </header>

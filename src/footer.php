@@ -6,6 +6,8 @@
             <li><a href="http://www.traveljohn.com/privacy-policy/">Private Policy</a></li>
             <li><a href="http://www.traveljohn.com/terms-and-conditions/">Terms And Conditions</a></li>
             <li><a href="http://www.traveljohn.com/legal-notice/">Legal Notices</a></li>
+            <li><a href="/nl">Nederlands</a></li>
+            <li><a href="/en">English</a></li>
           </ul>
         </div>
       </footer>
