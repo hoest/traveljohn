@@ -56,7 +56,7 @@
 
     <?php wp_head(); ?>
   </head>
-  <body>
+  <body class="<?php if(is_admin_bar_showing()) { echo 'in_admin_modus'; } ?>">
     <div class="wrapper">
       <header>
         <div class="inner-wrapper">
