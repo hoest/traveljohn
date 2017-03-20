@@ -21,8 +21,20 @@
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
     <script type="text/javascript">
       $('.slide').slick();
+
+      $('[data-fancybox]').fancybox({
+        image : {
+          protect: true
+        }
+      });
+
+      $('.mobile-menu').on('click', function() {
+        $(this).closest('nav').find('.menu').toggleClass('show');
+      });
     </script>
 
     <?php wp_footer(); ?>

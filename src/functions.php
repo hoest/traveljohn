@@ -22,17 +22,17 @@ function traveljohn_create_post_type() {
   register_post_type('traveljohn_product',
     array(
       'labels' => array(
-        'name' => __('TravelJohns'),
-        'singular_name' => __('TravelJohn'),
-        'add_new' => 'TravelJohn toevoegen',
-        'add_new_item' => 'TravelJohn toevoegen',
-        'edit_item' => 'TravelJohn aanpassen',
-        'new_item' => 'TravelJohn toevoegen',
-        'delete_item' => 'TravelJohn verwijderen',
-        'view_item' => 'TravelJohn bekijken',
-        'search_itema' => 'TravelJohn zoeken',
-        'not_found' => 'Geen TravelJohn gevonden',
-        'not_found_in_trash' => 'Geen TravelJohn gevonden in prullenbak'
+        'name' => __('Producten'),
+        'singular_name' => __('Product'),
+        'add_new' => 'Product toevoegen',
+        'add_new_item' => 'Product toevoegen',
+        'edit_item' => 'Product aanpassen',
+        'new_item' => 'Nieuw product',
+        'delete_item' => 'Product verwijderen',
+        'view_item' => 'Product bekijken',
+        'search_itema' => 'Product zoeken',
+        'not_found' => 'Geen producten gevonden',
+        'not_found_in_trash' => 'Geen producten gevonden in prullenbak'
       ),
       'rewrite' => array('slug' => 'traveljohn'),
       'menu_icon' => 'dashicons-admin-page',
@@ -60,18 +60,21 @@ add_filter('rwmb_meta_boxes', function($meta_boxes) {
     'fields' => array(
       array(
         'name' => 'Beschrijving',
+        'desc' => 'Tekst toont onder de naam van het product',
         'id' => 'traveljohn_product_text',
-        'type' => 'textarea'
+        'type' => 'wysiwyg'
       ),
       array(
         'name' => 'Afbeelding',
         'id' => 'traveljohn_product_image',
+        'desc' => 'Hoofdafbeelding van het product',
         'type' => 'image_advanced',
         'max_file_uploads' => 1,
         'max_status' => false,
       ),
       array(
         'name' => 'Extra afbeeldingen',
+        'desc' => 'Eventuele extra afbeeldingen van dit product',
         'id' => 'traveljohn_product_extra_image',
         'type' => 'image_advanced',
         'max_file_uploads' => 5
@@ -108,6 +111,11 @@ add_filter('rwmb_meta_boxes', function($meta_boxes) {
         'type' => 'image_advanced',
         'max_file_uploads' => 1,
         'max_status' => false,
+      ),
+      array(
+        'name' => 'Toon producten op deze pagina',
+        'id' => 'traveljohn_show_products',
+        'type' => 'checkbox'
       ),
     )
   );

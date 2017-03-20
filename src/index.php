@@ -54,7 +54,7 @@
       </div>
     <?php } ?>
   <?php } else {
-    $images = rwmb_meta('banner_image' );
+    $images = rwmb_meta('banner_image');
 
     if (!empty($images)) { ?>
       <div class="yellow-bg">
@@ -80,6 +80,62 @@
           </div>
         </div>
       </div>
+
+      <?php
+        $show_products = rwmb_meta('traveljohn_show_products');
+
+        if($show_products == 1) { ?>
+        <div class="producten">
+          <?php $args = array(
+            'post_type' => 'traveljohn_product',
+            // 'orderby' => 'post_title',
+            'order' => 'ASC',
+            'showposts' => -1,
+            'post_status' => 'publish'
+          );
+
+          $products = get_posts( $args );
+
+          foreach ($products as $product) {
+            $product_images = rwmb_meta('traveljohn_product_image', $args = array(), $product->ID);
+            $product_extra_images = rwmb_meta('traveljohn_product_extra_image', $args = array(), $product->ID);
+            $product_name = $product->post_title;
+            $product_text = rwmb_meta('traveljohn_product_text', $args = array(), $product->ID);
+          ?>
+            <div class="product">
+              <div class="traveljohn_product_image">
+                <?php foreach ($product_images as $product_image) { ?>
+                  <a href="<?php echo esc_url( $product_image['full_url'] ); ?>"
+                     data-fancybox="group-<?php echo $product->ID; ?>"
+                     data-caption="<?php echo esc_attr( $product_image['alt'] ); ?>">
+                    <img src="<?php echo esc_url( $product_image['url'] ); ?>"
+                         alt="<?php echo esc_attr( $product_image['alt'] ); ?>">
+                  </a>
+                <?php } ?>
+              </div>
+              <div class="product-inner">
+                <div class="traveljohn_product_name">
+                  <?php echo $product_name; ?>
+                </div>
+                <div class="traveljohn_product_text">
+                  <?php echo do_shortcode(wpautop($product_text)); ?>
+                </div>
+                <div class="traveljohn_product_extra_image">
+                  <?php foreach ($product_extra_images as $product_extra_image) { ?>
+                    <a href="<?php echo esc_url( $product_extra_image['full_url'] ); ?>"
+                       data-fancybox="group-<?php echo $product->ID; ?>"
+                       data-caption="<?php echo esc_attr( $product_extra_image['alt'] ); ?>"
+                       class="product_extra_image_small">
+                      <img src="<?php echo esc_url( $product_extra_image['url'] ); ?>"
+                           alt="<?php echo esc_attr( $product_extra_image['alt'] ); ?>">
+                    </a>
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
+        </div>
+      <?php } ?>
     </div>
   </div>
 
