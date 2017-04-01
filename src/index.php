@@ -68,6 +68,7 @@
     <?php } ?>
   <?php } ?>
 
+  <?php if ($post->post_content != '') { ?>
   <div class="content inner-wrapper">
     <div class="content-inner">
       <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -138,6 +139,7 @@
       <?php } ?>
     </div>
   </div>
+  <?php } ?>
 
   <?php endwhile; ?>
 </main>

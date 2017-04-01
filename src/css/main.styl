@@ -3,19 +3,87 @@
   License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -24,24 +92,42 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
   list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
   quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -102,7 +188,7 @@ header ul {
 }
 
 header .mobile-menu {
-  display:none;
+  display: none;
 }
 
 header ul li:hover,
@@ -139,11 +225,50 @@ main p {
   margin: 1em 0;
 }
 
-main h1 {
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 2em;
-  color: #007b40;
-  font-weight: 700;
+main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #007b40;
+    font-weight: 700;
+    margin: 0 0 1em 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 2em;
+  }
+
+  ul {
+    list-style: disc;
+    margin-left: 1.25em;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
 }
 
 main .cartoons .slide .image {
@@ -153,26 +278,30 @@ main .cartoons .slide .image {
 }
 
 main .cartoons .slide .image .image-text {
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left:0;
-  right: 0;
-  text-align: center;
-  background-color: #000;
-  background-color: rgba(0,0,0,0.75);
-  color: #fff;
-  padding: .5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
+  display: none;
 }
 
-main .cartoons .slide .image:hover .image-text {
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-}
+// main .cartoons .slide .image .image-text {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   text-align: center;
+//   background-color: #000;
+//   background-color: rgba(0, 0, 0, 0.75);
+//   color: #fff;
+//   padding: .5em;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   opacity: 0;
+// }
+
+// main .cartoons .slide .image:hover .image-text {
+//   opacity: 1;
+//   transition: opacity 300ms ease-in;
+// }
 
 main .cartoons .slide .image img {
   display: block;
@@ -199,11 +328,25 @@ main .content .content-inner {
   max-width: 960px;
 }
 
-.yellow-bg .slick-arrow { z-index: 99; }
-.yellow-bg .slick-prev { left: 1rem; }
-.yellow-bg .slick-next { right: 1rem; }
-.yellow-bg .slick-dots { bottom: 0; }
-.yellow-bg .slick-dotted.slick-slider {margin-bottom: 0;}
+.yellow-bg .slick-arrow {
+  z-index: 99;
+}
+
+.yellow-bg .slick-prev {
+  left: 1rem;
+}
+
+.yellow-bg .slick-next {
+  right: 1rem;
+}
+
+.yellow-bg .slick-dots {
+  bottom: 0;
+}
+
+.yellow-bg .slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
 
 .single-page .yellow-bg {
   height: 200px;
@@ -212,8 +355,8 @@ main .content .content-inner {
   text-align: center;
 
   .banner {
-    background-color: rgb(255,255,255);
-    background-color: rgba(255,255,255, 0.75);
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.75);
     height: 200px;
 
     img {
@@ -228,7 +371,7 @@ main .content .content-inner {
   align-items: stretch;
 
   .product {
-    max-width: calc(33% - 10px);
+    max-width: calc(50% - 20px);
     flex-grow: 1;
     margin: 5px;
     border: 1px solid #999;
@@ -236,7 +379,7 @@ main .content .content-inner {
     box-shadow: 3px 3px 3px 0px #cecece;
 
     .traveljohn_product_image {
-      text-align:center;
+      text-align: center;
 
       img {
         display: block;
@@ -253,8 +396,8 @@ main .content .content-inner {
       .traveljohn_product_name {
         font-family: 'Open Sans', Arial, sans-serif;
         color: #007b40;
-        font-weight:bold;
-        font-size:1.3em;
+        font-weight: bold;
+        font-size: 1.3em;
       }
 
       .traveljohn_product_text {
@@ -287,7 +430,8 @@ main .content .content-inner {
 }
 
 form.wpcf7-form {
-  input, textarea {
+  input,
+  textarea {
     width: 100%;
     font-size: 1em;
     line-height: 1.5;
@@ -346,7 +490,7 @@ footer ul li {
 
     .mobile-menu {
       display: block;
-      position: absolute
+      position: absolute;
       top: 10px;
       right: 10px;
       cursor: pointer;
@@ -362,12 +506,16 @@ footer ul li {
   }
 
   .cartoons {
-    display:none;
+    display: none;
   }
 
   footer {
-    .copy { text-align: center; }
-    .inner-wrapper, ul {
+    .copy {
+      text-align: center;
+    }
+
+    .inner-wrapper,
+    ul {
       display: block;
     }
   }
