@@ -191,6 +191,30 @@ header .mobile-menu {
   display: none;
 }
 
+header nav {
+  display: flex;
+
+  ul.flags {
+    align-self: center;
+    margin: 6px 0 0 16px;
+
+    li {
+      &:hover,
+      li.current_page_item {
+        background-color: unset;
+      }
+
+      a {
+        padding: 0 8px;
+
+        img {
+          width: 24px;
+        }
+      }
+    }
+  }
+}
+
 header ul li:hover,
 header ul li.current_page_item {
   color: #fff;
@@ -477,6 +501,10 @@ footer ul li {
       ul {
         display: none;
       }
+    }
+
+    .flags {
+      display: none;
     }
 
     .menu.show {
