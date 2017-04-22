@@ -29,10 +29,10 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 
     <meta name="author" content="<?php bloginfo('name'); ?>" />
-    <meta name="keywords" content="Studio Elvis, Jochum de Jong, Jochum, de Jong, Grafisch, Desgign, Soest" />
+    <meta name="keywords" content="TravelJohn, Hoge plas nood, geen toilet, wegwerptoilet, unisex disposable urinal, sanitary, discreet, compact, portable toilet" />
 
     <meta property="og:locale" content="nl_NL" />
-    <meta property="og:image" content="<?php bloginfo('stylesheet_directory'); ?>/images/logo-fb.png" />
+    <meta property="og:image" content="<?php bloginfo('stylesheet_directory'); ?>/images/logo-normal.png" />
     <meta property="og:url" content="<?php the_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
 
